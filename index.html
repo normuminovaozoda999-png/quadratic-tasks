@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Квадратичная функция - Онлайн-задания</title>
+<style>
+body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+h1 { text-align: center; }
+.question { margin-bottom: 15px; }
+button { margin-top: 10px; }
+.result { font-weight: bold; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Квадратичная функция - Онлайн-задания</h1>
+
+<div class="question">
+  <p>1. Найдите вершину функции y = 2x^2 - 4x + 1</p>
+  <input type="text" id="q1" placeholder="Введите x вершины">
+</div>
+
+<div class="question">
+  <p>2. Найдите нули функции y = x^2 - 5x + 6</p>
+  <input type="text" id="q2" placeholder="Введите через запятую, например: 2,3">
+</div>
+
+<button onclick="checkAnswers()">Проверить ответы</button>
+
+<div class="result" id="result"></div>
+
+<script>
+function checkAnswers() {
+    let score = 0;
+    let total = 2;
+
+    // Вопрос 1
+    let q1 = document.getElementById('q1').value.trim();
+    if (q1 == 1) score++;
+
+    // Вопрос 2
+    let q2 = document.getElementById('q2').value.replace(/\s/g, '');
+    if (q2 == '2,3' || q2 == '3,2') score++;
+
+    document.getElementById('result').innerText = `Вы ответили правильно на ${score} из ${total} вопросов.`;
+}
+</script>
+
+</body>
+</html>
